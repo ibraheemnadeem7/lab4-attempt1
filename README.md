@@ -62,7 +62,7 @@ Run a simple blur using the naive method:
 
 ```bash
 ./imgconv \
-  --in data/oldkenyon.ppm \
+  --in oldkenyon.ppm \
   --out blur_naive.pgm \
   --filter blur \
   --method naive
@@ -72,7 +72,7 @@ Now run the same blur using FFT:
 
 ```bash
 ./imgconv \
-  --in data/oldkenyon.ppm \
+  --in oldkenyon.ppm \
   --out blur_fft.pgm \
   --filter blur \
   --method fft
