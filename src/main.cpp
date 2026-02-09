@@ -11,7 +11,7 @@
 #include "conv_naive.h"
 #include "conv_fft.h"
 
-using clock_t = std::chrono::high_resolution_clock;
+using hr_clock = std::chrono::high_resolution_clock;
 
 struct Args {
   std::string in_path;
@@ -143,9 +143,9 @@ int main(int argc, char** argv) {
     // Timed runs
     double total_ms = 0.0;
     for (int r = 0; r < args.repeat; ++r) {
-      auto t0 = clock_t::now();
+      auto t0 = hr_clock::now();
       out = run_once(input, k, args.method);
-      auto t1 = clock_t::now();
+      auto t1 = hr_clock::now();
       total_ms += std::chrono::duration<double, std::milli>(t1 - t0).count();
     }
 
